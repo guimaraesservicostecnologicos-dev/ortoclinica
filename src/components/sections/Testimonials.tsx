@@ -47,7 +47,7 @@ export function Testimonials() {
                   className="flex h-full flex-col rounded-2xl bg-white p-6 shadow-sm shadow-black/5"
                 >
                   <div className="flex items-center gap-3">
-                    <div className="flex h-11 w-11 items-center justify-center rounded-full bg-tint font-serif font-semibold text-primary">
+                    <div className="flex h-11 w-11 items-center justify-center rounded-full bg-tint font-semibold text-primary">
                       {t.initial}
                     </div>
                     <div>

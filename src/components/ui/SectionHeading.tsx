@@ -27,7 +27,7 @@ export function SectionHeading({
       <Reveal delay={0.08}>
         <h2
           className={cn(
-            'mt-4 font-serif text-3xl leading-tight md:text-[2.5rem]',
+            'mt-4 text-3xl leading-tight font-normal tracking-tight md:text-[2.5rem]',
             tone === 'dark' ? 'text-white' : 'text-ink',
           )}
         >

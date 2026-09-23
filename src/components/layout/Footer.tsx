@@ -1,5 +1,4 @@
 import { Mail, MapPin, Phone } from 'lucide-react'
-import { Link } from 'react-router-dom'
 import { CLINIC, NAV_LINKS } from '../../data/nav'
 import { FacebookIcon, InstagramIcon } from '../ui/SocialIcons'
 import logo from '../../assets/brand/logo.png'
@@ -37,20 +36,20 @@ export function Footer() {
         </div>
 
         <div>
-          <h3 className="font-serif text-base font-semibold text-white">Navegue</h3>
+          <h3 className="text-base font-semibold text-white">Navegue</h3>
           <ul className="mt-4 space-y-2.5 text-sm">
             {NAV_LINKS.map((link) => (
               <li key={link.href}>
-                <Link to={link.href} className="text-white/65 hover:text-white">
+                <a href={link.href} className="text-white/65 hover:text-white">
                   {link.label}
-                </Link>
+                </a>
               </li>
             ))}
           </ul>
         </div>
 
         <div>
-          <h3 className="font-serif text-base font-semibold text-white">Contato</h3>
+          <h3 className="text-base font-semibold text-white">Contato</h3>
           <ul className="mt-4 space-y-3 text-sm text-white/65">
             <li className="flex items-start gap-2.5">
               <Phone size={16} className="mt-0.5 shrink-0 text-accent" />

@@ -1,13 +1,45 @@
 import { useEffect, useState } from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { Menu, X } from 'lucide-react'
 import { CLINIC, NAV_LINKS } from '../../data/nav'
 import { Button } from '../ui/Button'
 import { cn } from '../../lib/utils'
 import logo from '../../assets/brand/logo.png'
 
+const SECTION_IDS = NAV_LINKS.map((link) => link.href.slice(1))
+
+/** Highlights whichever section is crossing the middle of the viewport. */
+function useActiveSection() {
+  const [active, setActive] = useState(SECTION_IDS[0])
+
+  useEffect(() => {
+    // The tall top/bottom insets leave a thin band across the middle of the
+    // screen, so only one section counts as intersecting at any scroll position.
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const onScreen = entries.filter((entry) => entry.isIntersecting)
+        if (!onScreen.length) return
+        const highest = onScreen.reduce((a, b) =>
+          a.boundingClientRect.top <= b.boundingClientRect.top ? a : b,
+        )
+        setActive(highest.target.id)
+      },
+      { rootMargin: '-45% 0px -50% 0px' },
+    )
+
+    SECTION_IDS.forEach((id) => {
+      const el = document.getElementById(id)
+      if (el) observer.observe(el)
+    })
+    return () => observer.disconnect()
+  }, [])
+
+  return active
+}
+
 export function Header() {
   const [open, setOpen] = useState(false)
+  const active = useActiveSection()
 
   useEffect(() => {
     document.body.style.overflow = open ? 'hidden' : ''
@@ -30,21 +62,19 @@ export function Header() {
           />
         </Link>
 
-        <nav className="hidden items-center gap-9 lg:flex">
+        <nav className="hidden items-center gap-7 lg:flex">
           {NAV_LINKS.map((link) => (
-            <NavLink
+            <a
               key={link.href}
-              to={link.href}
-              end={link.href === '/'}
-              className={({ isActive }) =>
-                cn(
-                  'text-[15px] whitespace-nowrap text-ink/55 transition-colors hover:text-primary',
-                  isActive && 'font-medium text-primary',
-                )
-              }
+              href={link.href}
+              aria-current={active === link.href.slice(1) ? 'true' : undefined}
+              className={cn(
+                'text-[15px] whitespace-nowrap text-ink/55 transition-colors hover:text-primary',
+                active === link.href.slice(1) && 'font-medium text-primary',
+              )}
             >
               {link.label}
-            </NavLink>
+            </a>
           ))}
         </nav>
 
@@ -73,20 +103,17 @@ export function Header() {
       {open && (
         <div className="flex flex-col gap-1 border-t border-black/5 bg-white px-6 py-4 lg:hidden">
           {NAV_LINKS.map((link) => (
-            <NavLink
+            <a
               key={link.href}
-              to={link.href}
-              end={link.href === '/'}
+              href={link.href}
               onClick={() => setOpen(false)}
-              className={({ isActive }) =>
-                cn(
-                  'rounded-md px-3 py-3 text-base text-ink/70',
-                  isActive && 'bg-tint font-medium text-primary',
-                )
-              }
+              className={cn(
+                'rounded-md px-3 py-3 text-base text-ink/70',
+                active === link.href.slice(1) && 'bg-tint font-medium text-primary',
+              )}
             >
               {link.label}
-            </NavLink>
+            </a>
           ))}
           <div className="mt-3" onClick={() => setOpen(false)}>
             <Button href="#contato" variant="outline" shape="pill" className="w-full">

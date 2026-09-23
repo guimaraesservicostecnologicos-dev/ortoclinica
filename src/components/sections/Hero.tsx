@@ -7,16 +7,10 @@ export function Hero() {
   // No top padding here: the header's own bottom padding is the entire gap,
   // which keeps the logo optically centered in the white band above the card.
   return (
-    <div className="px-[var(--frame)] pb-[var(--frame)]">
-      {/* Font test scoped to the hero only — remove this <link> along with the
-          inline fontFamily overrides below once a font decision is made. */}
-      <link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
-      />
+    <div id="topo" className="px-[var(--frame)] pb-[var(--frame)]">
       <section
         className="relative flex min-h-[calc(100dvh-var(--header-h)-var(--frame))] items-center overflow-hidden rounded-3xl bg-cover bg-center px-6 py-16 md:rounded-[2rem] md:px-12 md:py-20"
-        style={{ fontFamily: "'Inter', sans-serif", backgroundImage: `url(${heroBg})` }}
+        style={{ backgroundImage: `url(${heroBg})` }}
       >
         {/* Brand-color wash over the photo: heavier on the left so the copy
             stays legible, lighter on the right to let the image read through */}
@@ -29,7 +23,6 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, delay: 0.1 }}
             className="text-4xl leading-[1.05] font-normal tracking-tight text-white md:text-[3.25rem]"
-            style={{ fontFamily: 'inherit' }}
           >
             Ortopedia de excelência,
             <br />

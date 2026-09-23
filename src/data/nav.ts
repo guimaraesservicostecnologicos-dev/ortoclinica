@@ -1,4 +1,11 @@
-export const NAV_LINKS = [{ label: 'Início', href: '/' }] as const
+/** All in-page anchors — the site is a single scrolling page. */
+export const NAV_LINKS = [
+  { label: 'Início', href: '#topo' },
+  { label: 'Sobre', href: '#sobre' },
+  { label: 'Equipe', href: '#equipe' },
+  { label: 'Convênios', href: '#convenios' },
+  { label: 'Contato', href: '#contato' },
+] as const
 
 export const CLINIC = {
   name: 'Ortoclínica',

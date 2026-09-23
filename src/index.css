@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Public+Sans:wght@400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
 @import "tailwindcss";
 
 @theme {
@@ -26,8 +26,7 @@
   --color-ink: #101826;
   --color-body: #3a3f47;
 
-  --font-serif: "Fraunces", "Iowan Old Style", serif;
-  --font-sans: "Public Sans", "Helvetica Neue", sans-serif;
+  --font-sans: "Inter", "Helvetica Neue", sans-serif;
 
   --animate-bounce-slow: bounce-slow 2.2s infinite;
 
@@ -97,7 +96,6 @@
   }
 
   h1, h2, h3, h4 {
-    font-family: var(--font-serif);
     color: var(--color-ink);
   }
 
