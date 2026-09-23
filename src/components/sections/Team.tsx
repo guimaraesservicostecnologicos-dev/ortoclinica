@@ -74,7 +74,7 @@ export function Team() {
   }
 
   return (
-    <section id="equipe" className="bg-primary-darker py-20 md:py-28">
+    <section id="equipe" className="bg-primary-dark py-20 md:py-28">
       <div className="mx-auto max-w-6xl px-6 md:px-10">
         <Reveal>
           <p className="text-center text-xs font-semibold tracking-[0.2em] text-accent-steel uppercase">

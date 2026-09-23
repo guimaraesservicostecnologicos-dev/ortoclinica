@@ -50,7 +50,7 @@ export function Header() {
 
         <div className="flex items-center justify-end">
           <Button
-            href="/contato"
+            href="#contato"
             variant="outline"
             shape="pill"
             className="hidden px-7 py-2.5 font-medium lg:inline-flex"
@@ -88,8 +88,8 @@ export function Header() {
               {link.label}
             </NavLink>
           ))}
-          <div className="mt-3">
-            <Button href="/contato" variant="outline" shape="pill" className="w-full">
+          <div className="mt-3" onClick={() => setOpen(false)}>
+            <Button href="#contato" variant="outline" shape="pill" className="w-full">
               Fale Conosco
             </Button>
           </div>

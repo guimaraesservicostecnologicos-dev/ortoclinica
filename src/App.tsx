@@ -3,7 +3,6 @@ import { useEffect } from 'react'
 import { MotionConfig } from 'framer-motion'
 import { Layout } from './components/layout/Layout'
 import { Home } from './pages/Home'
-import { Contato } from './pages/Contato'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -23,7 +22,6 @@ function App() {
         <Layout>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/contato" element={<Contato />} />
           </Routes>
         </Layout>
       </BrowserRouter>

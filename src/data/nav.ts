@@ -1,7 +1,4 @@
-export const NAV_LINKS = [
-  { label: 'Início', href: '/' },
-  { label: 'Contato', href: '/contato' },
-] as const
+export const NAV_LINKS = [{ label: 'Início', href: '/' }] as const
 
 export const CLINIC = {
   name: 'Ortoclínica',
