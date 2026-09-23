@@ -18,7 +18,7 @@ function ScrollToTop() {
 function App() {
   return (
     <MotionConfig reducedMotion="user">
-      <BrowserRouter>
+      <BrowserRouter basename={import.meta.env.BASE_URL}>
         <ScrollToTop />
         <Layout>
           <Routes>
