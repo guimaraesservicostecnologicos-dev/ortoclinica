@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Public+Sans:wght@400;500;600;700;800&display=swap");
+@import "tailwindcss";
+
+@theme {
+  /* Anchor navy — official Ortoclínica logo blue, with derived dark/mid steps */
+  --color-primary-darker: #080e18;
+  --color-primary-dark: #1a3051;
+  --color-primary: #244270;
+  --color-primary-mid: #546c8f;
+  --color-accent-steel: #3b8fc4;
+
+  /* Warm copper accent — reserved for CTAs and small highlights only */
+  /* --color-accent: #b3977c;
+  --color-accent-light: #d99a5f;
+  --color-accent-dark: #935c2c; */
+
+  --color-accent: #b3977c;
+  --color-accent-light: #d1ae8d;
+  --color-accent-dark: #8f7861;
+
+  --color-tint: #dce8f5;
+  --color-bg-alt: #f4f7fa;
+  --color-bg-warm: #faf8f4;
+  --color-whatsapp: #25d366;
+
+  --color-ink: #101826;
+  --color-body: #3a3f47;
+
+  --font-serif: "Fraunces", "Iowan Old Style", serif;
+  --font-sans: "Public Sans", "Helvetica Neue", sans-serif;
+
+  --animate-bounce-slow: bounce-slow 2.2s infinite;
+
+  @keyframes bounce-slow {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(6px);
+    }
+  }
+
+  /* The marquee track renders its logos twice, so sliding exactly half its
+     width lands on an identical frame and the loop reads as seamless. */
+  --animate-marquee: marquee 40s linear infinite;
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+}
+
+@layer utilities {
+  /* Carousel tracks are driven by arrows and swipe, so the native bar is
+     redundant — and its height would otherwise trigger a vertical scrollbar,
+     since overflow-x:auto makes overflow-y compute to auto. */
+  .no-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@layer base {
+  /* Single source of truth for the full-screen hero:
+     --frame is the inset around the hero card (sides + bottom gap),
+     --header-h is the header's fixed height, which the hero subtracts
+     from the viewport so the card fills exactly the remaining space. */
+  :root {
+    --frame: 1.5rem;
+    --header-h: 72px;
+  }
+
+  @media (min-width: 768px) {
+    :root {
+      --frame: 2.5rem;
+      --header-h: 88px;
+    }
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #ffffff;
+    color: var(--color-body);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-serif);
+    color: var(--color-ink);
+  }
+
+  ::selection {
+    background-color: var(--color-tint);
+    color: var(--color-primary-dark);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
