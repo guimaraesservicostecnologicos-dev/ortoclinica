@@ -74,22 +74,22 @@ export function Team() {
   }
 
   return (
-    <section id="equipe" className="bg-bg-alt py-20 md:py-28">
+    <section id="equipe" className="bg-primary-darker py-20 md:py-28">
       <div className="mx-auto max-w-6xl px-6 md:px-10">
         <Reveal>
-          <p className="text-center text-xs font-semibold tracking-[0.2em] text-primary uppercase">
+          <p className="text-center text-xs font-semibold tracking-[0.2em] text-accent-steel uppercase">
             Nossa equipe
           </p>
         </Reveal>
 
         <Reveal delay={0.08}>
-          <h2 className="mt-5 text-center font-sans text-3xl leading-tight font-normal tracking-tight text-ink md:text-[2.5rem]">
+          <h2 className="mt-5 text-center font-sans text-3xl leading-tight font-normal tracking-tight text-white md:text-[2.5rem]">
             Conheça nossos especialistas
           </h2>
         </Reveal>
 
         <Reveal delay={0.14}>
-          <p className="mx-auto mt-5 max-w-xl text-center text-base leading-relaxed text-body">
+          <p className="mx-auto mt-5 max-w-xl text-center text-base leading-relaxed text-white/70">
             Cada área da ortopedia com um especialista dedicado. Toque em um profissional para
             ver a formação completa.
           </p>
@@ -110,7 +110,7 @@ export function Team() {
                 type="button"
                 onClick={() => setSelected(member)}
                 aria-label={`Ver detalhes de ${member.name}`}
-                className="group relative block aspect-[3/4] w-full cursor-pointer overflow-hidden rounded-2xl"
+                className="group relative block aspect-[3/4] w-full cursor-pointer overflow-hidden rounded-2xl ring-1 ring-white/10 transition-shadow duration-300 hover:ring-white/25"
               >
                 <div className="h-full w-full transition-transform duration-500 ease-out group-hover:scale-[1.04]">
                   <Portrait member={member} />
@@ -143,10 +143,10 @@ export function Team() {
             onClick={() => scrollByCard(dir)}
             disabled={disabled}
             className={cn(
-              'flex h-11 w-11 items-center justify-center rounded-full border border-ink/15 text-ink transition-colors duration-200',
+              'flex h-11 w-11 items-center justify-center rounded-full border border-white/20 text-white transition-colors duration-200',
               disabled
-                ? 'cursor-default text-ink/25'
-                : 'cursor-pointer hover:border-ink/40 hover:bg-white',
+                ? 'cursor-default border-white/10 text-white/25'
+                : 'cursor-pointer hover:border-white/50 hover:bg-white/10',
             )}
           >
             <Icon size={20} />

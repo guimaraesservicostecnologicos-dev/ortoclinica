@@ -42,7 +42,7 @@
 
   /* The marquee track renders its logos twice, so sliding exactly half its
      width lands on an identical frame and the loop reads as seamless. */
-  --animate-marquee: marquee 40s linear infinite;
+  --animate-marquee: marquee 70s linear infinite;
 
   @keyframes marquee {
     from {
