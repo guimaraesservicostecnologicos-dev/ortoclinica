@@ -5,7 +5,7 @@
 //   2. importe aqui em cima:  import camila from '../assets/equipe/camila.png'
 //   3. acrescente  photo: camila  no objeto correspondente
 // Sem foto, o card usa automaticamente um bloco com as iniciais.
-import sergio from '../assets/equipe/sergio.png'
+import sergio from '../assets/equipe/sergio.webp'
 
 export type TeamMember = {
   name: string

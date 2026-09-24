@@ -1,7 +1,7 @@
 import { ChevronDown } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { Button } from '../ui/Button'
-import heroBg from '../../assets/hero/frente-ortoclinica.png'
+import heroBg from '../../assets/hero/frente-ortoclinica.webp'
 
 export function Hero() {
   // No top padding here: the header's own bottom padding is the entire gap,

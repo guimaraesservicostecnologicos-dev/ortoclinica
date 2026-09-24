@@ -2,17 +2,17 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { Reveal } from '../ui/Reveal'
 import { cn } from '../../lib/utils'
-import frenteOrtoclinica from '../../assets/hero/frente-ortoclinica.png'
-import urgencia from '../../assets/about/urgencia.png'
-import cirurgia from '../../assets/about/cirurgia.png'
+import ambulatorio from '../../assets/about/ambulatorio.webp'
+import urgencia from '../../assets/about/urgencia.webp'
+import cirurgia from '../../assets/about/cirurgia.webp'
 
 const BLOCKS = [
   {
     label: 'Ambulatório',
     text: 'Especialistas de cada área do aparelho locomotor, diagnóstico por imagem e reabilitação reunidos no mesmo hospital.',
     tags: ['Consultas'],
-    image: frenteOrtoclinica,
-    alt: 'Fachada da recepção da Ortoclínica',
+    image: ambulatorio,
+    alt: 'Ortopedista da Ortoclínica analisando uma radiografia no consultório',
   },
   {
     label: 'Urgência',
