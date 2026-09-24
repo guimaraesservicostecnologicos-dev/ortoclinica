@@ -95,8 +95,6 @@ export function About() {
                   alt={block.alt}
                   className="h-full w-full object-cover object-center transition-transform duration-500 ease-out group-hover:scale-[1.04]"
                 />
-                <div className="pointer-events-none absolute inset-0 bg-black/20" />
-
                 <div className="pointer-events-none absolute top-4 right-4 flex flex-wrap justify-end gap-2">
                   {block.tags.map((tag) => (
                     <span
